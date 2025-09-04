@@ -1,0 +1,62 @@
+
+    :root{
+        font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+        line-height:1.5;color:#222
+        }
+    body    {
+     margin:0;
+     background:#f7f7f9
+    }
+    header{
+        background:#0b7285;
+        color:#fff;
+        padding:28px 16px
+    }
+    .container{
+        max-width:1000px;
+        margin:0 auto;
+        padding:24px
+    }
+    h1,h2{
+        margin:0 0 12px 0
+    }
+    .hero{
+        display:flex;
+        flex-direction:column;
+        gap:12px
+    }
+    .card{
+        background:#fff;
+        border-radius:10px;
+        padding:18px;
+        box-shadow:0 4px 12px rgba(15,15,20,0.06)
+    }
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:14px
+    }
+    .team-member{
+        padding:12px;
+        border-radius:8px;
+        background:#fbfdff
+    }
+    footer{
+        padding:18px 0;
+        text-align:center;
+        color:#666
+    }
+    .contact{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        align-items:center
+    }
+    .small{
+        font-size:0.95rem;
+        color:#555
+    }
+    
+    @media(min-width:760px){ 
+        .hero{flex-direction:row;justify-content:space-between;align-items:center} 
+    }

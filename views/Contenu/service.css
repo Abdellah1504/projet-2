@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: black;
+}
+
+header {
+    background-color: #3b22c7;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+
+main {
+    padding: 20px;
+}
+
+.service {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service h2 {
+    color: #007bff;
+}
+
+footer {
+    text-align: center;
+    padding: -1em 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
