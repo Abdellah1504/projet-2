@@ -1,10 +1,53 @@
 
+    /*    menu ---------*/
+  header {
+    background-color: #ffffff;
+    color:black;
+    padding: 15px;
+  }
+  
+  .navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color:#255919;
+  }
+  
+  .logo span{
+    font-style: italic;
+    margin-left: 10%;
+  }
+  .menu ul {
+    list-style: none;
+    display:flex;
+  }
+  
+  .menu ul li {
+    margin-left: 20px;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+  }
+  
+  .burger {
+    display: none;
+    
+  }
+    
     body{
         margin:0;
         font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-        background:#f7f7f9;
+        background:#7c7cf0;
         color:#222;
-        line-height:1.6
+    
     }
     header{
         background:#0b7285;
@@ -36,11 +79,27 @@
     footer{
         padding:18px 0;
         text-align:center;
-        color:#666
+        color:#03010c;
+        font-size: 20px;
     }
     .date{
         font-size:0.9rem;
         color:#666;
         margin-bottom:8px
     }
+    /* Version pour les petits écrans (ex: smartphones) */
+@media (max-width: 768px) {
+      
+     
+    .menu ul {
+      
+      justify-content: center;
+      padding: 0;
+      flex-direction:column;
+      align-items: center;
+      margin: 0.1px;
+      gap: 10px;
+
+    }
+}
  

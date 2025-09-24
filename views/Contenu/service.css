@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #0da6cc;
     color: black;
 }
 
@@ -12,6 +12,45 @@ header {
     padding: 1em 0;
     text-align: center;
 }
+
+/**********************/
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color:#255919;
+  }
+  
+  .logo span{
+    font-style: italic;
+    margin-left: 10%;
+  }
+  .menu ul {
+    list-style: none;
+    display:flex;
+  }
+  
+  .menu ul li {
+    margin-left: 20px;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+  }
+  
+  .burger {
+    display: none;
+    
+  }
+    
+  /*     ---------------*/
 
 
 main {
@@ -23,7 +62,7 @@ main {
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
 }
 
 .service h2 {
@@ -38,4 +77,19 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+ /* Version pour les petits écrans (ex: smartphones) */
+@media (max-width: 768px) {
+      
+     
+    .menu ul {
+      
+      justify-content: center;
+      padding: 0;
+      flex-direction:column;
+      align-items: center;
+      margin: 0.1px;
+      gap: 10px;
+
+    }
 }

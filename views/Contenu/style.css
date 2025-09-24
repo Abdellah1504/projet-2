@@ -2,10 +2,16 @@
 
 /*    menu ---------*/
   header {
-    background-color: #ffffff;
+    background-color: #ec0f0f;
     color:black;
     padding: 15px;
   }
+ body {
+    background-color: #17aa9e;
+    color:black;
+    padding: 15px;
+  }
+  
   
   .navbar {
     display:flex;
@@ -58,10 +64,17 @@ h2 {
  }
 
  p {
- font-size: 100%;
+ font-size: 200%;
  padding-left: 15px;
  text-align: center;
- }
+ font-size: 30px; 
+  }
+   p.incrits {
+ font-size: 50%;
+ padding-left: 15px;
+ text-align: right;
+ font-size: 30px; 
+  }
 
  .nav-link { 
  text-align: center;
@@ -70,7 +83,7 @@ h2 {
  margin-left: 10%;
  }
 
- .bouton-rdv{
+ .bouton-rdv  {
     background-color:#C8FF00;;
     border: none;
     color: black;
@@ -85,6 +98,13 @@ h2 {
     font-weight :bolder;
    
   } 
+
+  
+  
+  form {
+    background-color:#1f1294;
+  }
+
 
 
   /* ---- Images --- */  
@@ -108,6 +128,17 @@ h2 {
   text-align: center;
 }
   /* ------------------------------------*/
+
+
+   /*.card {
+  margin-top: 16px;
+   }
+
+   .grid {
+  margin-top: 16px;
+   }*/
+
+
   /* ---------------rendez-vous---------------------*/
 
   .center {
@@ -121,18 +152,47 @@ h2 {
    
 }
 
-input   {
+form    {
   
   width: 650px;
-  height: 60px; 
+  height: 100px; 
   border:  3px solid gray;;
   letter-spacing: 1px;
   margin-top: 30px;
   font-size: 20px; 
   border-radius:10px; 
   padding-left: 10px;
+  float:left 
 }
+
+.login   {
+  
+  width: 650px;
+  height: 100px; 
+  border:  3px solid gray;;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  font-size: 20px; 
+  border-radius:10px; 
+  padding-left: 10px;
+  float:left 
+}
+ /* Version pour les petits écrans (ex: smartphones) */
+@media (max-width: 768px) {      
+     
+    .menu ul {
+      
+      justify-content: center;
+      padding: 0;
+      flex-direction:column;
+      align-items: center;
+      margin: 0.1px;
+      gap: 10px;
+
+    }}
+
 
 
 
 /* ------------------------------------*/
+

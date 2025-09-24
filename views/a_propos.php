@@ -1,13 +1,18 @@
 <?php
 // propos.php
 // Page "À propos" pour un cabinet dentaire
-// Personnalisez les variables ci-dessous
+
+
+// variables contenant des informations clés sur le cabinet : Ce sont des données générales de contact.
 
 $clinicName   = "Cabinet Dentaire du Dr Dupont";
 $dentistName  = "Dr. Dupont, Chirurgien-Dentiste";
 $address      = "12 Rue xxxxxx, 69000 Lyon, France";
 $phone        = "+33 6 00 00 00 00";
 $email        = "contact@cabinetdentaire-lyon.fr";
+
+//Horaires d’ouverture :
+//On utilise un tableau associatif pour stocker les horaires d’ouverture du cabinet, jour par jour.
 $openingHours = [
     "Lundi" => "09:00 - 18:00",
     "Mardi" => "09:00 - 18:00",
@@ -17,13 +22,25 @@ $openingHours = [
     "Samedi" => "Sur rendez-vous",
     "Dimanche" => "Fermé",
 ];
+
+// Mission et valeurs :
+// $mission : la philosophie générale du cabinet.
 $mission = "Offrir des soins dentaires professionnels, humains et respectueux, \
 en privilégiant la prévention, la pédagogie et le confort du patient.";
+
+//$values : un tableau associatif qui résume les valeurs professionnelles (ex : écoute, prévention, sécurité).
 $values = [
     "Écoute et respect" => "Chaque patient est accueilli avec attention ; nous expliquons chaque étape du soin.",
     "Précision et sécurité" => "Protocoles rigoureux et matériels entretenus pour garantir des traitements sûrs.",
     "Prévention" => "Conseils personnalisés d'hygiène pour préserver votre santé bucco-dentaire à long terme.",
 ];
+
+//Équipe
+
+// Un tableau d’associatifs représentant les membres de l’équipe :
+//Le nom
+//Le rôle
+//Une courte bio
 
 $team = [
     [
@@ -43,6 +60,9 @@ $team = [
     ],
 ];
 
+//Prestations principales :
+//Chaque entrée représente un type de service proposé au cabinet avec une courte description.
+
 $briefServices = [
     "Consultation et bilan"         => "Examen complet, radiographies numériques et plan de suivi personnalisé.",
     "Soins conservateurs"           => "Traitement des caries, obturations et soin des dents définitives.",
@@ -53,17 +73,38 @@ $briefServices = [
 ];
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>À propos — <?= htmlspecialchars($clinicName) ?></title>
   <meta name="description" content="À propos de <?= htmlspecialchars($clinicName) ?> — <?= htmlspecialchars($mission) ?>">
-  <link rel="stylesheet" href="Contenu\apropos.css">
+  <link rel="stylesheet" href="Contenu/apropos.css">
   
 </head>
 <body>
+   
+     <nav class="navbar ">
+          <div class="logo">Cabinet medical <br> <span>Dr. Dupont</span></div>
+          <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu" id="menu">
+            <ul>
+              <li><a href="Acceuil.php">Accueil</a></li>
+              <li><a href="a_propos.php">À propos</a></li>
+              <li><a href="Service.php">Services</a></li>              
+              <li><a href="actualite.php">Actualités</a></li>
+              <li><a  href="../index.php?action=login">Connexion</a></li>
+             <!-- <li><a  name="action" href="../index1.php">Connexion</a></li-->              
+
+            </ul>
+          </div> 
+        
+    </nav><br><br><br><br><br><br>
   <header>
     <div class="container">
       <div class="hero">
@@ -108,5 +149,15 @@ $briefServices = [
         <?php endforeach; ?>
       </div>
     </section>
+  </main>
+    <footer>
+    <div class="container">
+      &copy; <?= date("Y") ?> <?= htmlspecialchars($clinicName) ?> — Tous droits réservés.
+    </div>
+  </footer>
+ 
+</body>
+</html>
 
-    <section class="card" aria-la
+
+   

@@ -28,21 +28,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `rendez_vous` (
-  `id_patient` int(11) NOT NULL,
-  `nom_patient` varchar(100) NOT NULL,
-  `prenom_patient` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL
-  `date_rendez_vous` date NOT NULL 
-   `heure_rendez_vous` time NOT NULL 
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `patient` VARCHAR(100) NOT NULL,
+    `date` DATE NOT NULL,
+    `heure` TIME NOT NULL,
+    `motif` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `rendez_vous`
 --
 
-INSERT INTO `rendez_vous` (`id_patient`,`nom_patient`, `prenom_patient`, `email`, `date_rendez_vous`, `heure_rendez_vous`) VALUES
-(1,'Benoit', 'Félicien', 'Benoit-20@hotmail.fr','2025-10-28', '13:00:00'),
-(2,'Goudreau', 'Christine' , 'Goudreau-55@hotmail.fr','2025-11-07', '15:00:00');
+INSERT INTO `rendez_vous` (`id`,`patient`, `date`, `heure`) VALUES
+(1,'Benoit Félicien'  ,'2025-10-28', '13:00:00'),
+(2,'Goudreau Christine' , '2025-11-07', '15:00:00');
 
 
 
@@ -75,20 +74,25 @@ INSERT INTO `Patient` (`id_patient`, `civilite`, `nom`, `prenom`, `adresse`, `da
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Utilisateurs`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `Utilisateurs` (
-  `login` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+CREATE TABLE `users` (
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  satut ENUM('admin', 'patient') NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `Utilisateurs`
+-- Déchargement des données de la table `users`
 --
+-- admin
+INSERT INTO `users` (`email`, `password`,`statut`) VALUES
+('admin@cabinet.com', '<?= password_hash("admin123", PASSWORD_DEFAULT) ?>', 'admin');
+-- patient
+INSERT INTO `users` (`email`, `password`,`statut`) VALUES
+('patient@cabinet.com', '<?= password_hash("patient123", PASSWORD_DEFAULT) ?>', 'patient');
 
-INSERT INTO `Utilisateurs` (`login`, `password`) VALUES
-('user1', 'mdp1');
 
 --
 -- Index pour les tables déchargées
@@ -110,10 +114,10 @@ ALTER TABLE `Patient`
  
 
 --
--- Index pour la table `Utilisateurs`
+-- Index pour la table `users`
 --
-ALTER TABLE `Utilisateurs`
-  ADD PRIMARY KEY (`login`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées

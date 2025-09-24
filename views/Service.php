@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="Contenu\service.css">
 </head>
 <body>
+     <nav class="navbar ">
+          <div class="logo">Cabinet medical <br> <span>Dr. Dupont</span></div>
+          <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu" id="menu">
+            <ul>
+              <li><a href="Acceuil.php">Accueil</a></li>
+              <li><a href="a_propos.php">À propos</a></li>
+              <li><a href="Service.php">Services</a></li>              
+              <li><a href="actualite.php">Actualités</a></li>
+              <li><a href="#contact">Contactez-nous</a></li>
+              <li><a  href="../index.php?action=login">Connexion</a></li>
+             <!-- <li><a  name="action" href="../index1.php">Connexion</a></li-->              
+
+            </ul>
+          </div> 
+        
+    </nav><br><br><br><br><br>
     <header>
         <h1>Nos Services</h1>
     </header>
