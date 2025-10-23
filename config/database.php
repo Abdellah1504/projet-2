@@ -2,7 +2,6 @@
 class Database {
      //stocker l’hôte, la base, l’utilisateur et le mot de passe en privé
     private $host = "localhost";
-   //private $db_name = "cabinet_dentaire";  
     private $db_name = "cabinet_dentaire"; 
     private $username = "root";
     private $password = "";

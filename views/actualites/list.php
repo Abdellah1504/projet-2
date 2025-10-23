@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <!-- permet d’utiliser des caractères spéciaux (accents, etc.)-->
+    <meta charset="UTF-8"> 
+    <!--page responsive (s’adapte à la taille des écrans, utile sur mobile).-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prise de rendez-vous</title>    
-     
+    <title>Accueil Cabinet</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/login_form_css.css">
-     
-    
-    
+     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
     
 </head>
 <body>
@@ -27,28 +26,36 @@
               <li><a href="<?= BASE_URL ?>index.php?action=a_propos">À propos</a></li>    
               <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>              
               <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>
-              <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li>
-                       
+              <li><a  href="<?= BASE_URL ?>index.php?action=loginactualite">Connexion</a></li>           
 
             </ul>
           </div> 
         
-    </nav> <br><br><br>
-   <h1>Prendre rendez-vous</h1><br>
-   <?php if (!empty($confirmé)): ?>
-        <p style="color:green;font-size: 50px;"><?=  $confirmé ?></p>
-    <?php endif; ?>
-<form class="rdv" method="post" action="index.php?action=ajouter">  
-    <input type="text" name="patient" placeholder="Nom du patient" required>
-    <input type="date" name="date" required>
-    <input type="time" name="heure" required>
-    <input type="text" name="motif" placeholder="Motif" required><br> <br>
-    <button   class = "btn_rdv"  type="submit">Prendre rendez-vous</button>
-</form>
+    </nav><br><br><br><br><br><br>
+
+<h2>Liste des actualités</h2>
+
  
-    
-</body><br><br><br><br><br>
-<footer>
-        <br><br><p>&copy; <?php echo date("Y"); ?> Cabinet. Tous droits réservés.</p>
-    </footer>
-</html>
+<br><br>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Titre</th>
+    <th>Contenu</th>
+    <th>Date de publication</th>
+     
+     
+  
+  </tr>
+
+
+  <?php foreach ($actu as $a): ?>
+  <tr>
+    <td><?= htmlspecialchars($a['titre']) ?></td>
+    <td><?= nl2br(htmlspecialchars(substr($a['contenu'], 0, 100))) ?>...</td>
+    <td><?= htmlspecialchars($a['date_publication']) ?></td>
+     
+       
+  </tr>
+  <?php endforeach; ?>
+</table>

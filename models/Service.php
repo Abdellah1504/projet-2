@@ -1,31 +1,34 @@
+
 <?php
-class RendezVous {
+class Service {
     private $conn;  // Stocke la connexion PDO à la base de données.
-    private $table = "rendezvous";
+    private $table = "services";  
 
     public $id;
-    public $patient;
-    public $date;
-    public $heure;
-    public $motif;
+    public  $nom;
+    public $description;
+     
+     
 //Le constructeur __construct($db) reçoit un objet PDO et le stocke dans $this->conn pour exécuter des requêtes.
     public function __construct($db) {
         $this->conn = $db;
     }
-    
-    //ajouter un nouvel enregistrement dans table rendezvous
+
+
+//ajouter un nouvel enregistrement dans table rendezvous
     public function ajouter() {
-        $query = "INSERT INTO " . $this->table . " (patient, date, heure, motif)
-                  VALUES (:patient, :date, :heure, :motif)";
+        $query = "INSERT INTO " . $this->table . " (nom, description )
+                  VALUES (:nom, :description)";
      // préparer la requête avec PDO.
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":patient", $this->patient);
-        $stmt->bindParam(":date", $this->date);
-        $stmt->bindParam(":heure", $this->heure);
-        $stmt->bindParam(":motif", $this->motif);
+        $stmt->bindParam(":nom", $this->nom);
+        $stmt->bindParam(":description", $this->description);
+         
+        
         return $stmt->execute();
     }
-    // lister tous les éléments de la table rendezvous
+
+// lister tous les éléments de la table services
     public function lister() {
         $query = "SELECT * FROM " . $this->table;
         $stmt = $this->conn->prepare($query);
@@ -34,21 +37,21 @@ class RendezVous {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // mettre à jour un enregistrement existant dans la  table rendezvous
+// mettre à jour un enregistrement existant dans la  table services
     public function modifier() {
         $query = "UPDATE " . $this->table . " 
-                  SET patient=:patient, date=:date, heure=:heure, motif=:motif 
+                  SET nom=:nom, description=:description   
                   WHERE id=:id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $this->id);
-        $stmt->bindParam(":patient", $this->patient);
-        $stmt->bindParam(":date", $this->date);
-        $stmt->bindParam(":heure", $this->heure);
-        $stmt->bindParam(":motif", $this->motif);
-        return $stmt->execute();
+        $stmt->bindParam(":nom", $this->nom);
+        $stmt->bindParam(":description", $this->description);
+         
+         return $stmt->execute();
     }
 
-      // supprimer une ligne de la table avec   l’identifiant (id)
+
+// supprimer une ligne de la table avec   l’identifiant (id)
     public function supprimer() {
         $query = "DELETE FROM " . $this->table . " WHERE id=:id";
         $stmt = $this->conn->prepare($query);
@@ -56,3 +59,12 @@ class RendezVous {
         return $stmt->execute();
     }
 }
+
+
+
+
+
+
+
+
+

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil Cabinet</title>
-    <link rel="stylesheet" href="Contenu/style.css">
+    <title>Accueil Cabinet</title>   
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
+  
     
 </head>
 <body>
@@ -20,15 +21,16 @@
           <div class="menu" id="menu">
             <ul>
               <!--Liste de liens : Accueil, À propos, Services, Actualités, Contact, Connexion.-->
-              <li><a href="Acceuil.php">Accueil</a></li>
-              <li><a href="a_propos.php">À propos</a></li>
-              <li><a href="Service.php">Services</a></li>              
-              <li><a href="actualite.php">Actualités</a></li>
-              <li><a href="#contact">Contactez-nous</a></li>
-              <li><a  href="../index.php?action=login">Connexion</a></li>
-             <!-- <li><a  name="action" href="../index1.php">Connexion</a></li-->              
+                            
+               
+                <li><a href="<?= BASE_URL ?>index.php?action=a_propos">À propos</a></li>         
+                <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>             
+                <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>               
+                <li><a href="<?= BASE_URL ?>index.php?action=listerhoraire">Horraire ouverture</a></li>
+                <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li>
+                        
 
-            </ul>
+            </ul>     
           </div> 
         
     </nav>
@@ -51,9 +53,11 @@
         <br><div class = "color2">Notre galerie    </div> <br>
              <div class = "taille  ">Cabinet dentaire Dr. Dupont .</div> <br>     
            
-                  <div class="slide"> <img src="images/cabinet-medical-1.jpg" alt="image 1"></div>
-                  <div class="slide"> <img src="images/cabinet-medical-2.jpg" alt="image 2"></div>
-                  <div class="slide"> <img src="images/cabinet-medical-3.jpg" alt="image 3"></div>         
+                   
+                  <img src="<?= BASE_URL ?>assets/images/cabinet-medical-1.jpg" alt="image 1">
+                  <img src="<?= BASE_URL ?>assets/images/cabinet-medical-2.jpg" alt="image 2">
+                  <img src="<?= BASE_URL ?>assets/images/cabinet-medical-3.jpg" alt="image 3">
+                          
                   
       </div>        
     </section>  
@@ -65,9 +69,7 @@
         <section>
             <h2>Cabinet dentaire Dr. Dupont </h2>
             <p>Le cabinet dentaire du Dr. Dupont et toute son équipe vous souhaitent la bienvenue sur leur site internet et sont à votre service pour vous offrir des soins dentaires de haute qualité ainsi que le meilleur accueil possible..</p>
-        </section>
-
-        
+        </section>        
 
         <section class="nav-link">
             <h2>Rendez-vous</h2>

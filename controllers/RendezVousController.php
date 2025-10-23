@@ -21,9 +21,10 @@ class RendezVousController {
             $this->model->ajouter();  
             
             //confirmation de rendez vous avec le message  "✅ Rendez-vous confirmé !"
-           
+            $confirmé = "✅ Rendez-vous confirmé !.";
             include "views/rendezvous_form.php";
-             echo "✅ Rendez-vous confirmé !";     
+              
+             //echo '<p style="color:green;  font-size: 24px; font-weight: bold; margin-bottom: 100px;">✅ Rendez-vous confirmé !.</p>';   
         }
         //Sinon (si pas de POST)
         else {
@@ -41,9 +42,7 @@ class RendezVousController {
 
     public function modifier() {
         //seul admin y accède a modifier
-         if ($_SESSION["user"]["role"] !== "admin") {
-        die("Accès refusé : seuls les administrateurs peuvent modifier un rendez-vous.");
-    }
+         
         // Si la requête est un POST →
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // On récupère l’id et les nouvelles valeurs depuis le formulaire.
@@ -72,9 +71,7 @@ class RendezVousController {
 
     public function supprimer() {
         //seul admin y accède a supprimer
-        if ($_SESSION["user"]["role"] !== "admin") {
-        die("Accès refusé : seuls les administrateurs peuvent supprimer un rendez-vous.");
-    }
+         
         if (isset($_GET["id"])) {
             $this->model->id = $_GET["id"];
             $this->model->supprimer();

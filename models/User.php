@@ -20,29 +20,37 @@ class User {
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":email", $email);
         $stmt->execute();
-
+      //Si l'utilisateur existe (rowCount() > 0),
         if ($stmt->rowCount() > 0) {
+            //on récupère ses données.
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+          // On compare le mot de passe entré avec celui stocké dans la base (haché) grâce à password_verify().
             if (password_verify($password, $user["password"])) {
                 return $user;
             }
         }
+        //Si la vérification échoue,  retournes false.
         return false;
     }
    // ***************************************
 public function register($email, $password) {
-    // Vérifie si email déjà utilisé
+    // préparer une requête SQL qui cherche un utilisateur dans la table ($this->table) ayant un certain email.
     $check = $this->conn->prepare("SELECT id FROM " . $this->table . " WHERE email = :email");
+    //associer la valeur de la variable $email au paramètre :email dans la requête.
     $check->bindParam(":email", $email);
     $check->execute();
+    // utiliser fetch() pour récupérer le premier résultat trouvé.
     if ($check->fetch()) {
+      //S’il y a un résultat, cela veut dire qu’un utilisateur avec cet email existe déjà.
+      //On retourne donc false pour signaler que l’inscription ne doit pas continuer.
         return false; // email déjà pris
     }
-
+    //Hachage sécurisé du mot de passe.
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO " . $this->table . " (email, password, role) 
               VALUES (:email, :password, 'patient')";
+
+    //Préparation de la requête et liaison sécurisée des paramètres
     $stmt = $this->conn->prepare($query);
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":password", $hash);

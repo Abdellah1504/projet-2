@@ -33,7 +33,7 @@ $news = [
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Actualités — <?= htmlspecialchars($clinicName) ?></title>
   <meta name="description" content="Actualités, événements et annonces du <?= htmlspecialchars($clinicName) ?>.">
-  <link rel="stylesheet" href="Contenu/actualite.css">
+  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/actualite.css">
   
 </head>
 <body>

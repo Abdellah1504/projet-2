@@ -1,0 +1,25 @@
+/* Form layout */
+form.horaire {
+  width: 100%;
+}
+
+/* Table styling */
+form.horaire table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 8px;
+  table-layout: fixed;
+}
+
+.btn_enreg {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

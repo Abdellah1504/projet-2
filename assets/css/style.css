@@ -83,6 +83,19 @@ h2 {
  margin-left: 10%;
  }
 
+.border  {
+
+     border: "1" ;
+     margin: 0em;
+		padding: .20em;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #000000;
+		border-collapse:collapse;
+		font-size:25;
+    
+
+  }
  .bouton-rdv  {
     background-color:#C8FF00;;
     border: none;
@@ -99,11 +112,46 @@ h2 {
    
   } 
 
-  
+    
+
+ 
   
   form {
-    background-color:#1f1294;
+    background-color:#1591ca;
+    padding: 200px 150px;
   }
+
+  .bouton-publier  {
+     background-color:#1591ca;
+    border: none;
+    color: black;
+    padding: 20px 55px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius:50px;    
+    cursor: pointer;
+    margin: 10px 40px 80px 300px;    
+    font-weight :bolder;
+   
+  } 
+  
+  .bouton-enregistrer  {
+     background-color:#1591ca;
+    border: none;
+    color: black;
+    padding: 20px 55px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius:50px;    
+    cursor: pointer;
+    margin: 10px 40px 80px 300px;    
+    font-weight :bolder;
+   
+  } 
 
 
 

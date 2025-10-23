@@ -80,7 +80,8 @@ $briefServices = [
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>À propos — <?= htmlspecialchars($clinicName) ?></title>
   <meta name="description" content="À propos de <?= htmlspecialchars($clinicName) ?> — <?= htmlspecialchars($mission) ?>">
-  <link rel="stylesheet" href="Contenu/apropos.css">
+  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/apropos.css">
+  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
   
 </head>
 <body>
@@ -94,12 +95,11 @@ $briefServices = [
           </div>
           <div class="menu" id="menu">
             <ul>
-              <li><a href="Acceuil.php">Accueil</a></li>
-              <li><a href="a_propos.php">À propos</a></li>
-              <li><a href="Service.php">Services</a></li>              
-              <li><a href="actualite.php">Actualités</a></li>
-              <li><a  href="../index.php?action=login">Connexion</a></li>
-             <!-- <li><a  name="action" href="../index1.php">Connexion</a></li-->              
+            <li><a href="<?= BASE_URL ?>index.php?action=acceuil">Accueil</a></li> 
+            <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>             
+                <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>
+                 <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li> 
+                        
 
             </ul>
           </div> 

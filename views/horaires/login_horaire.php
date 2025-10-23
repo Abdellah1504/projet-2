@@ -21,11 +21,11 @@
           </div>
           <div class="menu" id="menu">
             <ul>
-              <li><a href="<?= BASE_URL ?>index.php?action=a_propos">À propos</a></li>         
-                <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>             
-                <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>               
-                <li><a href="<?= BASE_URL ?>index.php?action=listerhoraire">Horraire ouverture</a></li>
-                <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li>             
+              <li><a href="<?= BASE_URL ?>index.php?action=acceuil">Accueil</a></li>
+              <li><a href="<?= BASE_URL ?>index.php?action=a_propos">À propos</a></li>    
+              <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>              
+              <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>
+              <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li>            
 
             </ul>
           </div> 
@@ -45,24 +45,14 @@
         <p style="color:red;font-size: 50px;"><?=  $incorrect ?></p>
     <?php endif; ?>
 
-      <form class="login" method="post" action="index.php?action=login">
+      <form class="login" method="post" action="index.php?action=loginhoraire">
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Mot de passe" required>
     <br><button type="submit" class ="btn_connexion" >Connexion</button>
 </form><br><br><br><br> 
 
-<!-- Section Inscription :--> 
- <div class="incrits">Pas encore inscrit ? <br>
-  <!--Redirige vers index.php?action=register.--> 
-    <a class="nav-link"  href="index.php?action=register">
-      <div class="nav-link">
-        <button type="button"  class ="btn_inscription">S’inscrire</button>
-        </div>
-    </a>
- </div>
-
- 
- 
-
-<br> <br><?php require_once(__DIR__ . '/footer.php'); ?> 
-
+ </body>
+<footer>
+        <p>&copy; <?php echo date("Y"); ?> Cabinet. Tous droits réservés.</p>
+    </footer>
+</html>

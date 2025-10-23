@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services du Cabinet Médical</title>
-    <link rel="stylesheet" href="Contenu\service.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/service.css">
 </head>
 <body>
      <nav class="navbar ">
@@ -20,7 +20,6 @@
               <li><a href="a_propos.php">À propos</a></li>
               <li><a href="Service.php">Services</a></li>              
               <li><a href="actualite.php">Actualités</a></li>
-              <li><a href="#contact">Contactez-nous</a></li>
               <li><a  href="../index.php?action=login">Connexion</a></li>
              <!-- <li><a  name="action" href="../index1.php">Connexion</a></li-->              
 

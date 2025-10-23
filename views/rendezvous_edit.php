@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil Cabinet</title>
-    <link rel="stylesheet" href="views/Contenu/rdv.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/rdv.css">
 </head>
 <body>
 
@@ -18,12 +18,11 @@
           </div>
           <div class="menu" id="menu">
             <ul>
-              <li><a href="views/Acceuil.php">Accueil</a></li>
-              <li><a href="views/a_propos.php">À propos</a></li>
-              <li><a href="views/Service.php">Services</a></li>              
-              <li><a href="views/actualite.php">Actualités</a></li>
-              <li><a href="#contact">Contactez-nous</a></li>
-              <li><a href="index.php">Connexion</a></li>              
+              <li><a href="<?= BASE_URL ?>index.php?action=acceuil">Accueil</a></li>
+              <li><a href="<?= BASE_URL ?>index.php?action=a_propos">À propos</a></li>    
+              <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>              
+              <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>
+              <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li>           
 
             </ul>
           </div> 

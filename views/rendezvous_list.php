@@ -6,8 +6,8 @@
     <!--page responsive (s’adapte à la taille des écrans, utile sur mobile).-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil Cabinet</title>
-    <link rel="stylesheet" href="views/Contenu/login_form_css.css">
-     <link rel="stylesheet" href="views/Contenu/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/login_form_css.css">
+     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
     
 </head>
 <body>
@@ -23,12 +23,11 @@
           <div class="menu" id="menu">
             <ul>
                 <!--Liste de liens : Accueil, À propos, Services, Actualités, Contact, Connexion.-->
-              <li><a href="views/Acceuil.php">Accueil</a></li>
-              <li><a href="views/a_propos.php">À propos</a></li>
-              <li><a href="views/Service.php">Services</a></li>              
-              <li><a href="views/actualite.php">Actualités</a></li>
-              <li><a href="#contact">Contactez-nous</a></li>
-              <li><a  href="../index.php?action=login">Connexion</a></li>
+              <li><a href="<?= BASE_URL ?>index.php?action=acceuil">Accueil</a></li>
+              <li><a href="<?= BASE_URL ?>index.php?action=a_propos">À propos</a></li>    
+              <li><a href="<?= BASE_URL ?>index.php?action=listerservice">Services</a></li>              
+              <li><a href="<?= BASE_URL ?>index.php?action=listeractualite">Actualités</a></li>
+              <li><a  href="<?= BASE_URL ?>index.php?action=login">Connexion</a></li>
                           
 
             </ul>
@@ -37,7 +36,7 @@
     </nav>
 
 <h2>Liste des rendez-vous</h2>
-<table border="1">
+<table border="1" class="border">
     <tr>
        <!-- Affiche un tableau HTML avec les colonnes : ID, Patient, Date, Heure, Motif.-->
         <th>ID</th><th>Patient</th><th>Date</th><th>Heure</th><th>Motif</th> 
